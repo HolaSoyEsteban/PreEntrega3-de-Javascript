@@ -51,11 +51,25 @@ let opcionElegida = 0;
 let opcionSagaElegida = 0;
 
 let suma = 0;
-const precioHarryPotter = 10000;
-const precioMazeRunner = 7000;
-const precioSherlockHolmes = 15000;
-const precioStephenKing = 20000;
-const precioJulioVerne = 13000;
+*/
+
+class Saga {
+    constructor(nombre,precio){
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
+
+const Libros = [
+    new Saga("Harry Potter", 10000),
+    new Saga("Maze Runner", 7000),
+    new Saga("Sherlock Holmes", 15000),
+    new Saga("Stephen King", 20000),
+    new Saga("Julio Verne", 13000),
+]
+
+console.log(Libros);
+/*
 
 let cantidadHarryPotter = 0;
 let cantidadMazeRunner = 0;

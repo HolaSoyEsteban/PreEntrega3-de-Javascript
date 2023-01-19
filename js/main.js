@@ -77,7 +77,17 @@ function precioTotal(){
     console.log("Total de la compra = $ " + totalAPagar);
     alert(`Total de la compra = $ ${totalAPagar}`);
 }
-
+//   Funcion para actualizar stock de productos luego de realizada la compra
+function ActualizarStock(){
+    Libros.forEach((posicion)=>{
+        Carrito.forEach((posicionCarrito)=>{
+            if (posicion.nombre == posicionCarrito.nombre){
+                posicion.stock = (posicion.stock - posicionCarrito.Cantidad);
+            }
+        });
+        
+    });
+}
 // ------------------------------------------------------------------------------
 // ARRAYS Y OBJETOS
 
@@ -88,8 +98,8 @@ class Saga {
         this.precio = precio;
         this.stock = stock;
     }
-    descontarDelStock(cantidadADescontar){
-        this.stock = stock - cantidadADescontar;
+    DescontarDelStock(cantidadADescontar){
+        this.stock = this.stock - cantidadADescontar;
     }
 }
 
@@ -120,7 +130,7 @@ let preguntaRealizarCompra = "NO";
 let preguntaSalir = "NO";
 
 
-// saludo();
+saludo();
 
 do{
     opcionElegida = menuPrincipal();

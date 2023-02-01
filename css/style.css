@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: 1.5fr 6fr 2fr;
+    grid-template-rows: 1fr 6fr 2fr;
     grid-template-columns: auto;
 
     grid-template-areas: 
@@ -126,4 +126,86 @@ footer div p {
     font-size: 1.2rem;
     text-align: center;
     font-weight: bold;
+}
+
+/* Css para pestaña "productos" */
+
+.todosLosProductos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.productoVistaTarjeta {
+    width: 300px;
+    height: 400px;
+    padding: 1rem;
+    border: 5px solid aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(145, 82, 1, 0.454);
+    margin: 5px;
+}
+
+.imagenProducto {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 15px;
+}
+
+.productoVistaTarjeta p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.368);
+    text-decoration-thickness: 3px;
+    text-shadow: 3px 3px 4px black;
+}
+
+.precios p {
+    font-size: 1rem;
+    text-decoration: none;
+    text-shadow: 3px 3px 5px black;
+}
+
+.botonDeAgregarAlCarrito {
+    background-color: moccasin;
+    border: 5px solid rgba(255, 228, 181, 0.76);
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px black;
+    transition: 0.3s;
+}
+
+.botonDeAgregarAlCarrito:hover {
+    background-color: rgba(224, 156, 39, 0.664);
+    border: 1px solid rgba(224, 156, 39, 0.664);
+    padding: 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px black;
+}
+
+.botonDeAgregarAlCarrito p {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0px;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px black;
+    transition: 0.3s;
+}
+
+.botonDeAgregarAlCarrito:hover p{
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0px;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px black;
+    transition: 0.3s;
 }

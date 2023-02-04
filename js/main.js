@@ -11,7 +11,7 @@ function agregandoProductosAlCarritoProvisorio(chequeoExistencia,arrayEntrada,ca
         }
     }
 }
-    
+// Funciones de los botones    
 function AgregarSherlock(){
     const botonAgregarSherlock = document.getElementById("botonSherlock");
     botonAgregarSherlock.onclick = () => {
@@ -63,7 +63,14 @@ function AgregarRunner(){
         agregandoProductosAlCarritoProvisorio(chequeoRunner,Libros[4],cantidadRunner);
         chequeoRunner = true;
         AlmacenandoEnStorageMedianteJSON();
-        RecuperandoYMostrandoDelStorage(chequeoRunner);
+        RecuperandoYMostrandoDelStorage();
+    }
+}
+
+function VaciarCarrito(){
+    const botonVaciar = document.getElementById("Vaciar");
+    botonVaciar.onclick = () => {
+        localStorage.clear();
     }
 }
 // Funcion para almacenar la información del objeto Carrito Provisorio
@@ -155,4 +162,4 @@ AgregarPotter();
 AgregarVerne();
 AgregarKing();
 AgregarRunner();
-
+VaciarCarrito();

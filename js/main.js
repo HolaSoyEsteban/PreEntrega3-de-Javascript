@@ -71,6 +71,16 @@ function VaciarCarrito(){
     const botonVaciar = document.getElementById("Vaciar");
     botonVaciar.onclick = () => {
         localStorage.clear();
+        location.reload();
+    }
+}
+
+function ComprarCarrito(){
+    const botonRealizarCompra = document.getElementById("Comprar");
+    botonRealizarCompra.onclick = () => {
+
+        localStorage.clear();
+        location.reload();
     }
 }
 // Funcion para almacenar la información del objeto Carrito Provisorio
@@ -94,13 +104,44 @@ function RecuperandoYMostrandoDelStorage(chequeo){
     for(objetoDelJSON of objetosAlmacenados){
         CarritoDefinitivo.push(new Producto(objetoDelJSON));
     }
+    
     mostrarDatosDelStorageEnDOM(CarritoDefinitivo);
 }
 
 function mostrarDatosDelStorageEnDOM(datosDelCarrito){
-    console.log(datosDelCarrito);
-
+    // console.log(datosDelCarrito);
+    const contenidoDelCarrito = document.getElementById("contenidoDelCarrito");
+      
+    // Elimina todos los elementos hijos dentro del contenedor antes de agregar los nuevos datos actualizados
+    while (contenidoDelCarrito.firstChild) {
+      contenidoDelCarrito.removeChild(contenidoDelCarrito.firstChild);
+    }
+  
+    for (let i = 0; i < datosDelCarrito.length; i++) {
+      const producto = datosDelCarrito[i];
+  
+      const nombre = producto.nombre;
+      const precio = producto.precio;
+      const cantidad = producto.cantidad;
+  
+      const p = document.createElement("p");
+      p.innerHTML = `${nombre} ....................... Cantidad ... ${cantidad} ....................................  Precio c/u  ... $${precio} ................................. Subtotal .. $${cantidad*precio}.............`;
+      contenidoDelCarrito.appendChild(p);
+    }
+    montosSinYConIVA(datosDelCarrito);
 }
+
+function montosSinYConIVA(montosDelArray){
+    let sumaDeLaCompra = 0;
+    for (let i = 0; i < montosDelArray.length; i++) {
+        sumaDeLaCompra = sumaDeLaCompra + (Number(montosDelArray[i].cantidad) * Number(montosDelArray[i].precio))
+    }
+    const montoSinIVA = document.getElementById("montoTotalSinIVA");
+    montoSinIVA.innerHTML = `<p>$ ${sumaDeLaCompra}</p>`;
+    const montoConIva = document.getElementById("montoTotalConIVA");
+    montoConIva.innerHTML = `<p>$ ${sumaDeLaCompra * 1.21}</p>`;
+}
+
 //---------------------------------------------------------------------------------------
 //  ---- Objetos y Arrays de Objetos ----------------------------------------------------
 
@@ -163,3 +204,5 @@ AgregarVerne();
 AgregarKing();
 AgregarRunner();
 VaciarCarrito();
+ComprarCarrito();
+RecuperandoYMostrandoDelStorage();

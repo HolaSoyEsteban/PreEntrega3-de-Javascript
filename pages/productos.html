@@ -104,61 +104,26 @@
             <div class="carrito">
                 <p>Carrito</p>
                 
-                <div class="titulosDeSeccionDeCompra">
-                    <div class="seccionDeCompraTituloProducto">
-                        <p>Productos</p>
-                    </div>
-                    <div class="seccionDeCompraTituloCantidad">
-                        <p>Cantidad</p>
-                    </div>
-                    <div class="seccionDeCompraTituloPrecioUnitario">
-                        <p>Precio Unitario</p>
-                    </div>
-                    <div class="seccionDeCompraTituloPrecioTotal">
-                        <p>Precio Total</p>
-                    </div>
-                </div>
                 <!-- ---------------- Detalle de la compra --------------- -->
-                <div class="detalleDeCompra">
-                    <div class="detalleDeCompraProducto">
-                        <!-- Productos -->
-                        <p>Saga de harry potter</p>
-                    </div>
-                    <div class="detalleDeCompraCantidad">
-                        <!-- Cantidad -->
-                        <select name="Cantidad" id="seleccionDeCantidad">
-                            <option value="1">1 Unidad</option>
-                            <option value="2">2 Unidades</option>
-                            <option value="3">3 Unidades</option>
-                            <option value="4">4 Unidades</option>
-                            <option value="5">5 Unidades</option>
-                        </select>
-                    </div>
-                    <div class="detalleDeCompraPrecioUnitario">
-                        <!-- Precio Unitario -->
-                        <p>$25000</p>
-                    </div>
-                    <div class="detalleDeCompraPrecioTotal">
-                        <!-- Precio Total -->
-                        <p>$50000</p>
-                    </div>
+                <div class="detalleDeCompra" id="contenidoDelCarrito">
+                    
                 </div>
                 <!-- --------------------------------------------------------- -->
                 <div class="muestraDeMontoDeLaCompra">
                     <div>
                         <div class="muestraDeMontoDeLaCompraTexto1">
                             <div><p>Monto Total s/IVA</p></div>
-                            <div><p>$</p></div>
+                            <div id="montoTotalSinIVA"></div>
                         </div>
                         <div class="muestraDeMontoDeLaCompraTexto2">
                             <div><p>Total con IVA incluido</p></div>
-                            <div><p>$</p></div>
+                            <div id="montoTotalConIVA"><p>$</p></div>
                         </div>
                     </div>
                 </div>
                 <div class="BotonesDelCarrito">
                     <div class="vaciarCarrito" id="Vaciar"><p>Vaciar Carrito</p></div>
-                    <div class="realizarCompra"><p>Realizar Compra</p></div>
+                    <div class="realizarCompra" id="Comprar"><p>Realizar Compra</p></div>
                 </div>
 
             </div>

@@ -225,98 +225,21 @@ footer div p {
 
 .carrito p {
     color: antiquewhite;
-    
-}
-
-.titulosDeSeccionDeCompra {
-    display: flex;
-    flex-direction: row;
-    background-color: antiquewhite;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.titulosDeSeccionDeCompra div p {
-    font-size: 1.2rem;
-    color: black;
-}
-
-.seccionDeCompraTituloProducto {
-    background-color: aliceblue;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.seccionDeCompraTituloCantidad {
-    background-color: aliceblue;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.seccionDeCompraTituloPrecioUnitario {
-    background-color: aliceblue;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.seccionDeCompraTituloPrecioTotal {
-    background-color: aliceblue;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* -------------- Detalle de compra --------------- */
 .detalleDeCompra {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: end;
     border: 2px solid rgb(91, 90, 90);
     background-color: white;
 }
 
-.detalleDeCompraProducto {
-    width: 45%;
-    margin-right: 10px;
-}
-
-.detalleDeCompraProducto p {
-    color: rgb(52, 0, 0);
+.detalleDeCompra p {
     font-size: 1rem;
-}
-
-.detalleDeCompraCantidad {
-    width: 15%;
-}
-
-.detalleDeCompraCantidad select {
-    cursor: pointer;
-}
-
-.detalleDeCompraPrecioUnitario {
-    width: 20%;
-}
-
-.detalleDeCompraPrecioUnitario p {
-    color: rgb(52, 0, 0);
-    font-size: 0.8rem;
-}
-
-.detalleDeCompraPrecioTotal {
-    width: 20%;
-}
-
-.detalleDeCompraPrecioTotal p {
-    color: rgb(52, 0, 0);
-    font-size: 1rem;
-    font-weight: bold;
+    color: rgb(32, 35, 75);
+    text-shadow: 2px 2px 4px black;
 }
 
 /* ----------------------------------------------- */

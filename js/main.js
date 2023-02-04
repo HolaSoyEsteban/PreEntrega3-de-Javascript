@@ -1,21 +1,70 @@
 /* -------------------- Funciones ---------------------- */
 
-function agregandoProductosAlCarritoProvisional(arrayEntrada,cant){
-    if(CarritoProvisorio.length === 0){
+function agregandoProductosAlCarritoProvisional(chequeoExistencia,arrayEntrada,cant){
+    
+    if(chequeoExistencia === false){
         CarritoProvisorio.push({nombre:`${arrayEntrada.nombre}`, precio: arrayEntrada.precio, cantidad: cant});
     }else{
         for(objetos of CarritoProvisorio){
-            for(recorriendoSaga of Libros){
-                if(objetos.nombre === recorriendoSaga.nombre){
+                if(objetos.nombre === arrayEntrada.nombre){
                     objetos.cantidad = cant;
-                }else{
-                    CarritoProvisorio.push({nombre:`${arrayEntrada.nombre}`, precio: arrayEntrada.precio, cantidad: cant});
                 }
             }
-        
+        }
+        console.log(chequeoSherlock);
+    }
+
+    function AgregarSherlock(){
+        const botonAgregarSherlock = document.getElementById("botonSherlock");
+        botonAgregarSherlock.onclick = () => {
+        cantidadSherlock++;
+        agregandoProductosAlCarritoProvisional(chequeoSherlock,Libros[0],cantidadSherlock);
+        chequeoSherlock = true;
+        console.log(CarritoProvisorio);
         }
     }
-}
+
+    function AgregarPotter(){
+        const botonAgregarPotter = document.getElementById("botonPotter");
+        botonAgregarPotter.onclick = () => {
+            cantidadPotter++;
+            agregandoProductosAlCarritoProvisional(chequeoPotter,Libros[1],cantidadPotter);
+            chequeoPotter = true;
+            console.log(CarritoProvisorio);
+        }
+    }
+    
+    function AgregarVerne(){
+        const botonAgregarVerne = document.getElementById("botonVerne");
+        botonAgregarVerne.onclick = () => {
+            cantidadVerne++;
+            agregandoProductosAlCarritoProvisional(chequeoVerne,Libros[2],cantidadVerne);
+            chequeoVerne = true;
+            console.log(CarritoProvisorio);
+        }
+    }
+    
+    function AgregarKing(){
+        const botonAgregarKing = document.getElementById("botonKing");
+        botonAgregarKing.onclick = () => {
+            cantidadKing++;
+            agregandoProductosAlCarritoProvisional(chequeoKing,Libros[3],cantidadKing);
+            chequeoKing = true;
+            console.log(CarritoProvisorio);
+        }
+    }
+    
+    function AgregarRunner(){
+        const botonAgregarRunner = document.getElementById("botonRunner");
+        botonAgregarRunner.onclick = () => {
+            cantidadRunner++;
+            agregandoProductosAlCarritoProvisional(chequeoRunner,Libros[4],cantidadRunner);
+            chequeoRunner = true;
+            console.log(CarritoProvisorio);
+        }
+    }
+
+    
 //---------------------------------------------------------------------------------------
 
 //  ---- Objetos y Arrays de Objetos ----------------------------------------------------
@@ -63,6 +112,15 @@ let cantidadPotter = 0;
 let cantidadVerne = 0;
 let cantidadKing = 0;
 let cantidadRunner = 0;
+
+//Variables booleanas
+
+let chequeoSherlock = false;
+let chequeoPotter = false;
+let chequeoVerne = false;
+let chequeoKing = false;
+let chequeoRunner = false;
+
 //---------------------------------------------------------------------------------------
 
 //-------------------------------- Comienza el programa ---------------------------------
@@ -76,17 +134,9 @@ for(let i=0; i<ArrayIdSagas.length; i++){
 
 // Eventos
 
-const botonAgregarSherlock = document.getElementById("botonSherlock");
-botonAgregarSherlock.onclick = () => {
-    cantidadSherlock++;
-    agregandoProductosAlCarritoProvisional(Libros[0],cantidadSherlock);
+AgregarSherlock();
+AgregarPotter();
+AgregarVerne();
+AgregarKing();
+AgregarRunner();
 
-    console.log(CarritoProvisorio);
-}
-const botonAgregarPotter = document.getElementById("botonPotter");
-botonAgregarPotter.onclick = () => {
-    cantidadPotter++;
-    agregandoProductosAlCarritoProvisional(Libros[1],cantidadPotter);
-
-    console.log(CarritoProvisorio);
-}

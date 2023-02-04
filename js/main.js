@@ -74,14 +74,26 @@ function AlmacenandoEnStorageMedianteJSON(){
 }
 
 function RecuperandoYMostrandoDelStorage(chequeo){
+    class Producto{
+        constructor(obj){
+            this.nombre = `${obj.nombre}`;
+            this.precio = parseInt(obj.precio);
+            this.cantidad = parseInt(obj.cantidad);
+        }
+    }
+    
     const objetosAlmacenados = JSON.parse(localStorage.getItem("Carrito"));
     const CarritoDefinitivo = [];
     for(objetoDelJSON of objetosAlmacenados){
-        CarritoDefinitivo.push(new SagaCarrito(objetoDelJSON));
+        CarritoDefinitivo.push(new Producto(objetoDelJSON));
     }
-    console.log(CarritoDefinitivo);
+    mostrarDatosDelStorageEnDOM(CarritoDefinitivo);
 }
 
+function mostrarDatosDelStorageEnDOM(datosDelCarrito){
+    console.log(datosDelCarrito);
+
+}
 //---------------------------------------------------------------------------------------
 //  ---- Objetos y Arrays de Objetos ----------------------------------------------------
 
@@ -93,14 +105,6 @@ class Saga {
     }
     DescontarDelStock(cantidadADescontar){
         this.stock = this.stock - cantidadADescontar;
-    }
-}
-
-class SagaCarrito {
-    constructor(nombre, precio, cantidad){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
     }
 }
 
